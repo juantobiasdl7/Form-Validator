@@ -14,10 +14,10 @@
 body {
     font-family: 'Josefin Sans', sans-serif;
     color: white;
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
+    overflow: hidden;
+}
+
+.images {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -25,7 +25,26 @@ body {
     background-image:url("./img/maxresdefault.jpg");
     letter-spacing: 0.02em;
     -webkit-font-smoothing: antialiased; 
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    animation: colorRotate 7s linear infinite;
+    transition: transform 30s;
 }
+
+@keyframes colorRotate {
+    100% {
+    -webkit-filter: hue-rotate(360deg);
+    }
+}
+
+.images:hover {
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1); 
+  }
 
 .container{
     border-radius: 5px;
@@ -33,7 +52,7 @@ body {
     background-color: rgb(255, 248, 220, 0.6);
     box-shadow: 0 2px 15px rgba(255,255,255, 5);
     width: 400px;
-    margin-left: 30px;
+    margin-left: 180px;
 }
 
 h2 {
